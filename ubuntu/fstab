@@ -1,0 +1,2 @@
+wonseok@xxx.xxx.xxx.xxx:remote 				        /home/wonseok/remote  	 	fuse.sshfs defaults,_netdev,idmap=user,reconnect,uid=1000,gid=1000,allow_other 0 0
+wonseok@xxx.xxx.xxx.xxx:/user/share/FPGA_RELEASE/EVEREST  	/home/wonseok/FPGA_RELEASE  	fuse.sshfs defaults,_netdev,idmap=user,reconnect,uid=1000,gid=1000,allow_other 0 0
