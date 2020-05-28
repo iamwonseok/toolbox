@@ -1,0 +1,14 @@
+# 1. Jenkins Long Term Support(LTS) 이미지 생성
+FROM jenkins/jenkins:lts
+    
+# 2. 명령을 실행할 사용자 설정
+USER root
+    
+# 3. Jenkins build 시 필요한 zip command install
+RUN apt-get update
+RUN apt-get install -y zip
+    
+# 4.Jenkins build 시 필요한 awscli command install
+RUN apt-get install -y python-pip
+RUN pip install awscli
+RUN pip install --upgrade pip
