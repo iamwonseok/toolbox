@@ -24,10 +24,10 @@ fi
 
 echo "3. checkout llvm-11 branch"
 cd $IKOS_PATH
-git checkout llvm-11
+#git checkout llvm-11
 cd ../../
 
-echo "4. create build directory"
+echo "4. create build directory $BUILD_PATH/$IKOS_PATH"
 if [ -d $BUILD_PATH/$IKOS_PATH ]
 then
 	echo "SK"
@@ -48,7 +48,7 @@ cd $BUILD_PATH/$IKOS_PATH
 
 echo "5. start to build ikos"
 cmake -DCMAKE_INSTALL_PREFIX="../../$OUTPUT_PATH/ikos" \
-	  -DLLVM_CONFIG_EXECUTABLE="../../$OUTPUT_PATH/llvm/bin/llvm-config" \
-	  ../../$REPO_PATH/$IKOS_PATH
+	-DLLVM_CONFIG_EXECUTABLE="../../$OUTPUT_PATH/llvm/bin/llvm-config" \
+	../../$REPO_PATH/$IKOS_PATH
 
 cmake --build . --target install

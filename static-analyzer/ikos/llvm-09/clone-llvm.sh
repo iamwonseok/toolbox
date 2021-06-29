@@ -22,9 +22,9 @@ then
 	git clone $LLVM_GIT
 fi
 
-echo "3. checkout llvm-11 branch"
+echo "3. checkout llvm-10 branch"
 cd llvm-project
-git checkout aff8c045a225d98ee5fffa914e2493941f8465cd
+git checkout c1a0a213378a458fbea1a5c77b315c7dce08fd05
 cd ..
 
 echo -n "4. create build directory"
@@ -52,7 +52,7 @@ cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" \
 	-DBUILD_SHARED_LIBS=True -DLLVM_USE_SPLIT_DWARF=True \
 	-DCMAKE_INSTALL_PREFIX="../../$OUTPUT_PATH/llvm" \
 	-DLLVM_OPTIMIZED_TABLEGEN=True -DLLVM_BUILD_TESTS=False \
-	-DDEFAULT_SYSROOT="/home/wonseok/tools/riscv/gcc" \
+	-DDEFAULT_SYSROOT="/opt/riscv/gcc" \
 	-DLLVM_DEFAULT_TARGET_TRIPLE="riscv64-unknown-elf" \
 	-DLLVM_TARGETS_TO_BUILD="RISCV" \
 	-DLLVM_ENABLE_RTTI=ON \
